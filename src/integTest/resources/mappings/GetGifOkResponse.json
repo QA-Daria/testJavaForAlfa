@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v1/gifs/random",
+    "queryParameters": {
+      "tag": {
+        "equalTo": "rich"
+      },
+      "api_key": {
+        "equalTo": "giphy"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\n  \"data\": {\n    \"url\": \"https://giphy.com/gifs/cbs-broke-cbs-LOWE17wZZP48B5zBUu\",\n    \"bitly_url\": \"https://gph.is/g/ZkRPV1m\",\n    \"embed_url\": \"https://giphy.com/embed/LOWE17wZZP48B5zBUu\",\n    \"image_url\": \"https://media3.giphy.com/media/LOWE17wZZP48B5zBUu/giphy.gif\"\n  },\n  \"meta\": {\n    \"status\": 200,\n    \"msg\": \"OK\",\n    \"response_id\": \"e849061b7c821c6bffc58ff714ef5334154703fb\"\n  }\n}"
+  }
+}

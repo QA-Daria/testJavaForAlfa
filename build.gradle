@@ -1,0 +1,49 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id "nebula.integtest" version "7.0.9"
+}
+
+group = 'testAlfa'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+ext {
+	set('springCloudVersion', "2020.0.0-RC1")
+
+}
+
+dependencies {
+	annotationProcessor("org.projectlombok:lombok")
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'org.springframework.session:spring-session-core'
+	implementation 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'junit:junit'
+	//testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+
+	integTestImplementation 'org.springframework.boot:spring-boot-starter-test'
+	integTestImplementation 'org.springframework.cloud:spring-cloud-contract-wiremock'
+	integTestImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+}
+
+test {
+	useJUnitPlatform()
+}
+integrationTest {
+	useJUnitPlatform()
+}
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

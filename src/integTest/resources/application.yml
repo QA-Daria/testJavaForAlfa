@@ -1,0 +1,10 @@
+feign-client:
+    giphy:
+      url: http://localhost:4567
+    openexchangerates:
+      url: http://localhost:4567
+giphy:
+  apiKey: "giphy"
+exchange:
+  appId: "appid"
+  symbols: "RUB"

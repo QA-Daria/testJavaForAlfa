@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Определение курса</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<script>
+    function checkAndShow() {
+        fetch('../getGif')
+            .then(response =>
+                response.json()
+            )
+            .then(response => {
+                document.getElementById("result_gif").src=response.data.image_url;
+            });
+    }
+</script>
+<div>
+    <button type="submit" onclick="checkAndShow()">Show</button>
+</div>
+<div>
+    <img crossorigin="anonymous" id="result_gif" src="">
+</div>
+</body>
+</html>

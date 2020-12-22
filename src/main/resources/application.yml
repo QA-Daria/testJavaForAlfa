@@ -1,0 +1,16 @@
+#spring.mvc.static-path-pattern=/resources/**
+#server.servlet.contextPath=/api
+spring:
+  mvc:
+    static-path-pattern: /static/**
+
+feign-client:
+    giphy:
+      url: https://api.giphy.com
+    openexchangerates:
+      url: https://openexchangerates.org
+giphy:
+  apiKey: "QHPUd8AIDHGZ5sLq5q6JWRnueYF9O8QL"
+exchange:
+  appId: "c25d00ea79304f1eb35f732ad302b97c"
+  symbols: "RUB"
